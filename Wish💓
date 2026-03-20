@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eid Mubarak Premium | Saurav</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Great+Vibes&family=Noto+Nastaliq+Urdu&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { overflow: hidden; background: #000; font-family: 'Segoe UI', sans-serif; }
+
+        /* --- PAGE 1: STARSHIP ASSEMBLY --- */
+        #page1 {
+            height: 100vh; width: 100%;
+            background: radial-gradient(circle, #0a192f, #000);
+            display: flex; justify-content: center; align-items: center;
+            position: relative;
+        }
+        .star-particle {
+            position: absolute; width: 2px; height: 2px; background: gold;
+            border-radius: 50%; box-shadow: 0 0 8px gold;
+            animation: moveIn 3s forwards ease-out;
+        }
+        @keyframes moveIn {
+            0% { transform: translate(var(--mx), var(--my)) scale(0); opacity: 0; }
+            100% { transform: translate(0, 0) scale(1); opacity: 1; }
+        }
+        #rocket-trigger {
+            display: none; text-align: center; cursor: pointer;
+            animation: rocketGlow 1.5s infinite alternate;
+            z-index: 10;
+        }
+        @keyframes rocketGlow { from { filter: drop-shadow(0 0 10px gold); } to { filter: drop-shadow(0 0 30px orange); transform: scale(1.05); } }
+
+        /* --- PAGE 2: MAXIMALIST EID THEME --- */
+        #page2 {
+            display: none; height: 100vh; width: 100%;
+            background: linear-gradient(135deg, #fdfbfb 0%, #ebedee 100%);
+            position: relative; overflow: hidden;
+            border: 12px double #2d6a4f; /* Green Decorative Border */
+        }
+
+        /* Border Ornaments (Canva Style) */
+        .corner-mandala { position: absolute; width: 120px; opacity: 0.9; z-index: 5; }
+        .tl { top: -20px; left: -20px; }
+        .tr { top: -20px; right: -20px; transform: rotate(90deg); }
+        .bl { bottom: -20px; left: -20px; transform: rotate(-90deg); }
+        .br { bottom: -20px; right: -20px; transform: rotate(180deg); }
+
+        .side-flower { position: absolute; width: 60px; opacity: 0.6; }
+        .s-left { left: 0; top: 50%; transform: translateY(-50%); }
+        .s-right { right: 0; top: 50%; transform: translateY(-50%) rotate(180deg); }
+
+        /* Hanging Items */
+        .hanging-container { position: absolute; width: 100%; top: 0; display: flex; justify-content: space-around; z-index: 6; }
+        .lamp { width: 50px; animation: swing 3s infinite ease-in-out; transform-origin: top; }
+        @keyframes swing { 0%, 100% { transform: rotate(-8deg); } 50% { transform: rotate(8deg); } }
+
+        /* Mosque & Content */
+        .mosque-doodle {
+            position: absolute; bottom: 5%; left: 50%; transform: translateX(-50%);
+            width: 95%; max-width: 500px; opacity: 0.15; z-index: 1;
+        }
+        .main-card {
+            position: relative; z-index: 10; text-align: center; margin-top: 18vh;
+        }
+        .wish-eng { font-family: 'Great Vibes', cursive; font-size: 3.8rem; color: #1b4332; margin-bottom: 5px; }
+        .wish-urdu { font-family: 'Noto Nastaliq Urdu', serif; font-size: 2rem; color: #2d6a4f; line-height: 2.2; }
+
+        /* Petals */
+        .petal {
+            position: absolute; z-index: 8;
+            animation: fall 6s linear infinite;
+        }
+        @keyframes fall {
+            0% { transform: translateY(-10vh) rotate(0deg); opacity: 1; }
+            100% { transform: translateY(110vh) rotate(720deg); opacity: 0; }
+        }
+
+        /* Final Note Slide-up */
+        #biryani-note {
+            position: absolute; bottom: -100%; left: 0; width: 100%;
+            background: #fff; padding: 25px; border-top: 5px solid #ffd700;
+            border-radius: 40px 40px 0 0; text-align: center;
+            box-shadow: 0 -15px 40px rgba(0,0,0,0.15);
+            transition: 1s cubic-bezier(0.25, 1, 0.5, 1); z-index: 100;
+        }
+        .note-txt { font-size: 1.5rem; color: #d00000; font-weight: bold; }
+
+        .sign { position: absolute; bottom: 10px; right: 20px; font-weight: bold; color: #1b4332; font-size: 10px; z-index: 101; }
+    </style>
+</head>
+<body>
+
+    <div id="page1">
+        <div id="rocket-trigger" onclick="nextPage()">
+            <div style="font-size: 80px;">🚀</div>
+            <div style="color: #fff; font-family: 'Cinzel'; letter-spacing: 3px;">INITIATE EID</div>
+        </div>
+    </div>
+
+    <div id="page2">
+        <img src="https://cdn-icons-png.flaticon.com/512/10542/10542526.png" class="corner-mandala tl">
+        <img src="https://cdn-icons-png.flaticon.com/512/10542/10542526.png" class="corner-mandala tr">
+        <img src="https://cdn-icons-png.flaticon.com/512/10542/10542526.png" class="corner-mandala bl">
+        <img src="https://cdn-icons-png.flaticon.com/512/10542/10542526.png" class="corner-mandala br">
+        
+        <img src="https://cdn-icons-png.flaticon.com/512/8147/8147040.png" class="side-flower s-left">
+        <img src="https://cdn-icons-png.flaticon.com/512/8147/8147040.png" class="side-flower s-right">
+
+        <div class="hanging-container">
+            <img src="https://cdn-icons-png.flaticon.com/512/2319/2319815.png" class="lamp">
+            <img src="https://cdn-icons-png.flaticon.com/512/2855/2855479.png" class="lamp" style="width:70px; animation-delay: 0.5s;">
+            <img src="https://cdn-icons-png.flaticon.com/512/2319/2319815.png" class="lamp" style="animation-delay: 0.2s;">
+        </div>
+
+        <div class="main-card">
+            <div style="font-size: 50px; margin-bottom: 10px;">✨ 🌙 ✨</div>
+            <h1 class="wish-eng">Eid-ul-Fitr Mubarak</h1>
+            <h2 class="wish-urdu">عید الفطر مبارک</h2>
+            <p style="color: #666; font-style: italic; margin-top: 20px;">May your days be filled with joy and peace.</p>
+        </div>
+
+        <img src="https://cdn-icons-png.flaticon.com/512/2319/2319711.png" class="mosque-doodle">
+
+        <div id="biryani-note">
+            <div class="note-txt">BADLE MEIN BIRYANI KAB MILEGI???? 😅😅</div>
+        </div>
+
+        <div class="sign">BY SAURAV</div>
+    </div>
+
+    <script>
+        // Page 1 Particles
+        const p1 = document.getElementById('page1');
+        for(let i=0; i<80; i++) {
+            let s = document.createElement('div');
+            s.className = 'star-particle';
+            s.style.setProperty('--mx', (Math.random() - 0.5) * 1500 + 'px');
+            s.style.setProperty('--my', (Math.random() - 0.5) * 1500 + 'px');
+            s.style.animationDelay = (Math.random() * 1) + 's';
+            p1.appendChild(s);
+        }
+
+        setTimeout(() => {
+            document.querySelectorAll('.star-particle').forEach(el => el.style.opacity = '0');
+            document.getElementById('rocket-trigger').style.display = 'block';
+        }, 3200);
+
+        function nextPage() {
+            p1.style.opacity = '0';
+            setTimeout(() => {
+                p1.style.display = 'none';
+                document.getElementById('page2').style.display = 'block';
+                spawnPetals();
+                setTimeout(() => {
+                    document.getElementById('biryani-note').style.bottom = '0';
+                }, 5000);
+            }, 800);
+        }
+
+        function spawnPetals() {
+            const petalIcons = ['🌸', '🌹', '🍃'];
+            for(let i=0; i<40; i++) {
+                let p = document.createElement('div');
+                p.className = 'petal';
+                p.innerHTML = petalIcons[Math.floor(Math.random() * petalIcons.length)];
+                p.style.left = Math.random() * 100 + 'vw';
+                p.style.fontSize = (Math.random() * 20 + 10) + 'px';
+                p.style.animationDuration = (Math.random() * 3 + 4) + 's';
+                p.style.animationDelay = (Math.random() * 5) + 's';
+                document.getElementById('page2').appendChild(p);
+            }
+        }
+    </script>
+</body>
+</html>
+
